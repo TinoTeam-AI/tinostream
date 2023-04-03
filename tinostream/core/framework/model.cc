@@ -14,12 +14,7 @@
 #include "tinostream/core/include/framework/model.hpp"
 
 std::vector <double> tinostream::model::sequential::getOutput() { return output; }
-
-// 1. Assigning a class input vector to a function input vector
-// 2. Calling layer functions in a for range loop
-tinostream::model::sequential::sequential(std::vector <double> input) {
-    this->input = input;
-}
+tinostream::model::sequential::sequential(std::vector <double> input) { this->input = input; }
 
 void tinostream::model::sequential::work(layers layer) {
     for (auto &l : layer) {
