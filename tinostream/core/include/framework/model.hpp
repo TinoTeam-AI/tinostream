@@ -13,7 +13,7 @@
 #pragma once
 #include "function/neuron.hpp"
 
-#include <functional>
+//#include <functional>
 #include <vector>
 
 #ifdef __cplusplus
@@ -23,26 +23,23 @@ extern "C++" {
 namespace tinostream {
     
     typedef std::vector <std::vector <std::vector <double>>> tensor;
-    typedef std::vector <std::function<void()>> layers;
 
     class model {
         public:
-            /*  */
-            typedef std::vector <std::function<void()>> layers;
+            int input_size(int size);
+            int hidden_size(int size);
+            int output_size(int size);
+            /*  */  
             struct sequential {
-                sequential(std::vector <double> inputs);
-                void work(layers layer); 
-                void layer(const int Qneuron, activation active);
-                
-                std::vector <double> getOutput();
-                    
+                sequential(int (*input_size)(int size), int (*hidden_size)(int size), int (*output_size)(int size), activation active);
+
                 private: 
                     std::vector <double> input, output;
                     tensor weights;
                     int numLayer; 
             };
     };
-}
+} // namespace tinostream 
 
 #ifdef __cplusplus
 }
