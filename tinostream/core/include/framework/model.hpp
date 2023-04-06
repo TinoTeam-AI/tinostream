@@ -11,33 +11,52 @@
 /////////////////////////////////////////////////////////////// */
 
 #pragma once
+#include "function/math/tensor.hpp"
 #include "function/neuron.hpp"
 
 //#include <functional>
-#include <vector>
 
 #ifdef __cplusplus
 extern "C++" {
 #endif
 
 namespace tinostream {
-    
-    typedef std::vector <std::vector <std::vector <double>>> tensor;
 
-    class model {
-        public:
-            int input_size(int size);
-            int hidden_size(int size);
-            int output_size(int size);
-            /*  */  
-            struct sequential {
-                sequential(int (*input_size)(int size), int (*hidden_size)(int size), int (*output_size)(int size), activation active);
+    namespace model {
 
-                private: 
-                    std::vector <double> input, output;
-                    tensor weights;
-                    int numLayer; 
-            };
+        /*  */
+        struct linear {
+            linear(int Qlayer, int Qneuron);
+            linear(int Qneuron);
+            linear();
+            int GetQlayer();
+            int GetQneuron();
+
+            void setWeights(std::vector <std::vector <double>> weights);
+            void setActivation(activation active);
+
+            std::vector <double> operator()(std::vector <double> inputs);
+            linear& operator = (linear &x);
+            private:
+                std::vector <std::vector <double>> weights;
+                activation active;
+                int Qlayer;
+                int Qneuron;
+        };
+
+        /*  */  
+        struct sequential {
+            sequential(linear input_layer, linear hidden_layer, linear output_layer, activation active);
+            void operator()(std::vector <double> inputs);
+
+            private: 
+                int input_size, hidden_size, output_size;
+                activation active;
+            private:
+                linear input_layer, hidden_layer, output_layer;
+                std::vector <double> output;
+                tensor weights;
+        };
     };
 } // namespace tinostream 
 
