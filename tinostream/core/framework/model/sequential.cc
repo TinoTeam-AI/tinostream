@@ -13,6 +13,8 @@
 #pragma once
 #include "tinostream/core/include/framework/model.hpp"
 
+void tinostream::model::sequential::setWeight(tensor weights) { this-> weights = weights; }
+std::vector <double> tinostream::model::sequential::GetOutput() { return output; }
 tinostream::model::sequential::sequential(linear input_layer, linear hidden_layer, linear output_layer, tinostream::activation active) {
     this->active = active;
     this->input_layer = input_layer;

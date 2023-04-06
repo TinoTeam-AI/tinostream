@@ -40,7 +40,7 @@ std::vector <double> tinostream::model::linear::operator()(std::vector <double> 
     std::vector <double> output;
     for (size_t i = 0; i < Qlayer; i++) {
         for (size_t j = 0; j < Qneuron; j++) {
-            output[i] = neuron(weights[i], inputs, active);
+            output[j] = neuron(weights[i], inputs, active);
         }
     }
     return output;
