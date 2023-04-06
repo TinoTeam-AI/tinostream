@@ -12,14 +12,18 @@
 
 #pragma once
 #include <vector>
+#include <random>
 
 #ifdef __cplusplus
 extern "C++" {
 #endif
 
 namespace tinostream {
-    
-    typedef std::vector <std::vector <std::vector <double>>> tensor;
+    /*  */
+    template <typename T>
+    class tensor {
+        
+    };
 
 }
 
