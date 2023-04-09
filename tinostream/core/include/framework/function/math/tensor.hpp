@@ -11,7 +11,6 @@
 /////////////////////////////////////////////////////////////// */
 
 #pragma once
-#include <vector>
 #include <random>
 
 #ifdef __cplusplus
@@ -19,10 +18,29 @@ extern "C++" {
 #endif
 
 namespace tinostream {
-    /*  */
+    enum rank {
+        vector, 
+        matrix,
+        tensor,
+        four_tensor
+    };
+
     template <typename T>
     class tensor {
-        
+        private:
+            T* arr_;
+            rank rank;
+            
+            struct vector;
+            struct matrix;
+            struct tensor;
+            struct four_tensor;
+
+        public:
+            tensor(tinostream::rank);
+            ~tensor();
+
+            
     };
 
 }

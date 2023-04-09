@@ -13,3 +13,7 @@
 #pragma once 
 #include "tinostream/core/include/framework/function/math/tensor.hpp"
 
+/* Constructors and destructors of the tensor class */
+template <typename T> tinostream::tensor<T>::tensor(tinostream::rank rank) {
+    
+} 

@@ -14,6 +14,8 @@
 #include "function/math/tensor.hpp"
 #include "function/neuron.hpp"
 
+#include <vector>
+
 #ifdef __cplusplus
 extern "C++" {
 #endif
