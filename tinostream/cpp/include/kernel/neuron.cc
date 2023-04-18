@@ -10,10 +10,24 @@
 * All Rights Reserved
 /////////////////////////////////////////////////////////////// */
 
-#ifndef TINOSTREAM
-#define TINOSTREAM
+#pragma once
+#include <vector>
 
-#include "kernel/neuron.cc"
-#include "util/JsonParse.hpp"
+#ifdef __cplusplus
+extern "C++" {
+#endif
 
+namespace ts {
+    enum activation {
+        RELU,
+        SIGMOID,
+        SOFTMAX
+    };
+
+    double neuron(std::vector <double> weight, std::vector <double> input, activation activ);
+
+} // namespace ts
+
+#ifdef __cplusplus
+} // end extern "C++"
 #endif
