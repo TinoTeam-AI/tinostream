@@ -11,6 +11,7 @@
 /////////////////////////////////////////////////////////////// */
 
 #pragma once
+#include <vector>
 #include <cmath>
 
 namespace ts {
@@ -19,7 +20,7 @@ enum activation {
     RELU,
     SIGMOID,
     SOFTMAX
-}
+};
 
 double sigmoid(double x) {
     return 1.0 / (1.0 + std::exp(-x));

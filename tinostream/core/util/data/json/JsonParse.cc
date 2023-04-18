@@ -15,34 +15,30 @@
 
 namespace ts {
 
-std::vector <std::string> JsonParse(const std::string path, const std::string arrayName) {
+std::vector <std::string> GetJsonArray(const std::string path, const std::string arrayName) {
     CheckJSON(path, arrayName);
     std::vector <std::string> values = readJSON(path, arrayName);
     return values;
 }
 
-void JsonParse(const std::string path, const std::string arrayName, std::vector <std::string> input) {
+void SetJsonArrayStr(const std::string path, const std::string arrayName, std::vector <std::string> input) {
     CheckJSON(path, arrayName);
     writeJSON(path, input, arrayName);
 }
 
-void JsonParse(const std::string path, const std::string arrayName, std::vector <double> input) {
+void SetJsonArray(const std::string path, const std::string arrayName, std::vector <double> input) {
     CheckJSON(path, arrayName);
     writeJSON(path, DoubleToString(input), arrayName);
 }
 
-void JsonParse(const std::string path, const std::string arrayName, std::vector <std::string> input, std::string str) {
-    if (str == "del") {
-        CheckJSON(path, arrayName);
-        writeJSONdel(path, input, arrayName);
-    } 
+void SetJsonArrayDelStr(const std::string path, const std::string arrayName, std::vector <std::string> input) {
+    CheckJSON(path, arrayName);
+    writeJSONdel(path, input, arrayName);
 }
 
-void JsonParse(const std::string path, const std::string arrayName, std::vector <double> input, std::string str) {
-    if (str == "del") {
-        CheckJSON(path, arrayName);
-        writeJSONdel(path, DoubleToString(input), arrayName);
-    }
+void SetJsonArrayDel(const std::string path, const std::string arrayName, std::vector <double> input) {
+    CheckJSON(path, arrayName);
+    writeJSONdel(path, DoubleToString(input), arrayName);
 }
 
 } // namespace ts
