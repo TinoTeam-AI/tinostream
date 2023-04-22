@@ -10,6 +10,29 @@
 * All Rights Reserved
 /////////////////////////////////////////////////////////////// */
 
-#include "tinostream/core/kernel/neuron.cc"
-#include "tinostream/core/kernel/tensor/tensor.cc"
-#include "tinostream/core/util/data/json/JsonParse.cc"
+#pragma once
+#include <random>
+#include <vector>
+#include <string>
+#include <cmath>
+
+#ifdef __cplusplus
+extern "C++" {
+#endif
+
+namespace ts {
+
+template<typename T> class tensor {
+    public:
+        tensor(int);
+
+        T& operator [](size_t);
+
+        T PushBack(size_t);
+};
+
+} // namespace ts
+
+#ifdef __cplusplus
+} // end extern "C++"
+#endif

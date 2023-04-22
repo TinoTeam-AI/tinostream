@@ -13,7 +13,8 @@
 #ifndef TINOSTREAM
 #define TINOSTREAM
 
-#include "kernel/neuron.cc"
+#include "kernel/neuron.hpp"
+#include "kernel/tensor.hpp"
 #include "util/JsonParse.hpp"
 
 #endif
