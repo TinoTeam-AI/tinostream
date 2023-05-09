@@ -10,4 +10,13 @@
 # All Rights Reserved
 # ===============================================================
 
-# Empty
+# Import library
+
+import ctypes 
+
+# Import C++ library.
+test = ctypes.CDLL('https://github.com/TinoTeam-AI/tinostream/blob/main/bin/tinostream-unix/libtinostream.so')
+
+# Functions.
+
+# Empty.
