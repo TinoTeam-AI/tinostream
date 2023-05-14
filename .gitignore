@@ -1,6 +1,6 @@
 
-CMakeCache.txt
-
+# IDE files and directories
 .vscode
-CMakeFiles
-build
+
+# Build directories
+tinostream/cpp/build
