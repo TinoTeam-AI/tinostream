@@ -16,7 +16,7 @@ project(tinostream)
 
 # Установка директории с исходными файлами
 set(SOURCES
-  cpp_api.cc
+  API/cpp_api.cc
 )
 
 # Компиляция с помощью g++
