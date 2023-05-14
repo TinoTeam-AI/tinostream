@@ -11,9 +11,9 @@
 =============================================================== */
 
 #pragma once
-#include "rapidjson/stringbuffer.h"
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
+#include "tinostream/core/lib/rapidjson/stringbuffer.h"
+#include "tinostream/core/lib/rapidjson/document.h"
+#include "tinostream/core/lib/rapidjson/writer.h"
 
 #include <sstream>
 #include <iostream>

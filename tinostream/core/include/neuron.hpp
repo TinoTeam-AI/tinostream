@@ -11,22 +11,19 @@
 =============================================================== */
 
 #pragma once
-#include "tinostream/cpp/include/sequential.hpp"
+#include <vector>
 
 namespace ts {
+    enum activation {
+        RELU,
+        SIGMOID
+    };
 
-    linear::linear(size_t num_neuron, size_t num_layer) {
-        this->num_neuron = num_neuron;
-        this->num_layer = num_layer;
-    }
-
-    linear::linear(size_t num_neuron) {
-        this->num_neuron = num_neuron;
-        this->num_layer = 1;
-    }
-
-    void linear::work(activation active) {
-        
-    }
-
+    class neuron {
+        private:
+            std::vector <double> input;
+            std::vector <double> weights;
+        public:
+            
+    };
 }

@@ -10,23 +10,28 @@
 // All Rights Reserved
 =============================================================== */
 
-#pragma once
-#include "tinostream/cpp/include/sequential.hpp"
+#pragma once 
+#include <cstddef>
+
+#ifdef __cplusplus
+extern "C++" {
+#endif
 
 namespace ts {
+    template<typename T> class tensor {
+        private: 
+            T* data_;
+            size_t size;
+        public:
+            tensor();
+            ~tensor();
 
-    linear::linear(size_t num_neuron, size_t num_layer) {
-        this->num_neuron = num_neuron;
-        this->num_layer = num_layer;
-    }
-
-    linear::linear(size_t num_neuron) {
-        this->num_neuron = num_neuron;
-        this->num_layer = 1;
-    }
-
-    void linear::work(activation active) {
-        
-    }
-
+            void pushBack(const T& value);
+            
+            T& operator [](size_t index_x);
+    };
 }
+
+#ifdef __cplusplus
+} // end extern "C++"
+#endif
