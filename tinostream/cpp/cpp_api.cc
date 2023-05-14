@@ -10,6 +10,5 @@
 * All Rights Reserved
 /////////////////////////////////////////////////////////////// */
 
-#include "tinostream/core/kernel/neuron.cc"
 #include "tinostream/core/kernel/tensor/tensor.cc"
 #include "tinostream/core/util/data/json/JsonParse.cc"

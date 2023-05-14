@@ -10,26 +10,28 @@
 // All Rights Reserved
 =============================================================== */
 
-#pragma once
-#include "tinostream/cpp/include/tensor.hpp"
+#pragma once 
+#include <cstddef>
+
+#ifdef __cplusplus
+extern "C++" {
+#endif
 
 namespace ts {
-    
-    template<typename T> tensor<T>::tensor() {
-        size = 0;
-        data_ = new T[size];
-    }
+    template<typename T> class tensor {
+        private: 
+            T* data_;
+            size_t size;
+        public:
+            tensor();
+            ~tensor();
 
-    template<typename T> tensor<T>::~tensor() {
-        delete[] data_;
-    }
-
-    template<typename T> void tensor<T>::pushBack(const T& value) {
-        data_[size++] = value;
-    }
-
-    template<typename T> T& tensor<T>::operator[](size_t index) {
-        return data_[index];
-    }
-
+            void pushBack(const T& value);
+            
+            T& operator [](size_t index_x);
+    };
 }
+
+#ifdef __cplusplus
+} // end extern "C++"
+#endif
